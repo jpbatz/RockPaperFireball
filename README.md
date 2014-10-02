@@ -1,5 +1,3 @@
-RockPaperFireball
-=================
 # Rock Paper Fireball
 
 ## The Setup
