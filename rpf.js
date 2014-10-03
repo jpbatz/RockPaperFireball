@@ -1,5 +1,8 @@
 // computer chooses
 
+(function() { // self-invoking anonymous function
+  // all code goes here
+
 var userChoice;
 var compChoice;
 
@@ -8,6 +11,9 @@ function userChooses() {
   
   do {
     userChoice = prompt("Select [R]ock, [P]aper or [F]ireball ('R', 'P', or 'F'):");
+    if ((userChoice.toUpperCase() !== "R") && (userChoice.toUpperCase() !== "P") && (userChoice.toUpperCase() !== "F")) {
+      alert("Try using R, P, or F. No messing around!");
+    }
   } while ((userChoice.toUpperCase() !== "R") && (userChoice.toUpperCase() !== "P") && (userChoice.toUpperCase() !== "F"));
   
   return userChoice.toUpperCase();
@@ -86,13 +92,10 @@ function result() {
 }
 var result_div = document.getElementById('results');
 var startButton = document.createElement('button');
-startButton.innerHTML = "start";
-startButton.onclick = result;
-var replayButton = document.createElement('button');
-replayButton.innerHTML = "replay";
-
+  startButton.innerHTML = "start";
+  startButton.onclick = result;
+  
   controls.appendChild(startButton);
-  controls.appendChild(replayButton);
 
 function display(mssg) {
   // var result_div = document.getElementById('results');
@@ -108,4 +111,6 @@ function clearDisplay () {
 //   result();
 // }
 // while();
+
+})();
 
