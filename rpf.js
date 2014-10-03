@@ -2,8 +2,7 @@
 
 var userChoice;
 var compChoice;
-var winner;
-var loser;
+
 // noprotect
 function userChooses() {
   
@@ -36,47 +35,47 @@ function result() {
   var userPick = userChooses();
   var compPick = computerChooses();
   
-  console.log("User: " + userPick);
-  console.log("computer: " + compPick);
+  //display("User: " + userPick);
+  //display("computer: " + compPick);
   
   switch(userPick) {
     case "R":
-      console.log("User: " + userPick);
-      console.log("computer: " + compPick);
+      display("User: " + userPick);
+      display("computer: " + compPick);
       if(compPick === "P") {
-        console.log("Paper covers Rock");
-        console.log("Computer Wins!");
+        display("Paper covers Rock");
+        display("Computer Wins!");
       } else if(compPick === "F") {
-        console.log("Rock blocks Fireball");
-        console.log("User Wins!");
+        display("Rock blocks Fireball");
+        display("User Wins!");
       } else if(compPick === "R") {
-        console.log("Tied! User and Computer both picked Rock.");
+        display("Tied! User and Computer both picked Rock.");
       }
       break;
     case "P":
-      console.log("User: " + userPick);
-      console.log("computer: " + compPick);
+      display("User: " + userPick);
+      display("computer: " + compPick);
       if(compPick === "R") {
-        console.log("Paper covers Rock");
-        console.log("User Wins!");
+        display("Paper covers Rock");
+        display("User Wins!");
       } else if(compPick === "F") {
-        console.log("Fireball engulfs Paper");
-        console.log("Computer Wins!");
+        display("Fireball engulfs Paper");
+        display("Computer Wins!");
       } if(compPick === "P") {
-        console.log("Tied! User and Computer both picked Paper.");
+        display("Tied! User and Computer both picked Paper.");
       }
       break;
     case "F":
-      console.log("User: " + userPick);
-      console.log("computer: " + compPick);      
+      display("User: " + userPick);
+      display("computer: " + compPick);      
       if(compPick === "R") {
-        console.log("Rock blocks Fireball");
-        console.log("Computer Wins!");
+        display("Rock blocks Fireball");
+        display("Computer Wins!");
       } else if(compPick === "P") {
-        console.log("Fireball engulfs Paper");
-        console.log("User Wins!");
+        display("Fireball engulfs Paper");
+        display("User Wins!");
       } if(compPick === "F") {
-        console.log("Tied! User and Computer both picked Fireball.");
+        display("Tied! User and Computer both picked Fireball.");
       }
       break;
     default:
@@ -85,9 +84,11 @@ function result() {
   
 }
 
-function display(result) {
-  console.log();
-  var winner = result();
+function display(mssg) {
+  var result_div = document.getElementById('results');
+  var result_p = document.createElement('p');
+  result_p.innerHTML += mssg; 
+  result_div.appendChild(result_p);
 }
 
 result();
