@@ -32,6 +32,7 @@ function computerChooses() {
 }
 
 function result() {
+  clearDisplay();
   var userPick = userChooses();
   var compPick = computerChooses();
   
@@ -83,12 +84,28 @@ function result() {
   
   
 }
+var result_div = document.getElementById('results');
+var startButton = document.createElement('button');
+startButton.innerHTML = "start";
+startButton.onclick = result;
+var replayButton = document.createElement('button');
+replayButton.innerHTML = "replay";
+
+  controls.appendChild(startButton);
+  controls.appendChild(replayButton);
 
 function display(mssg) {
-  var result_div = document.getElementById('results');
+  // var result_div = document.getElementById('results');
   var result_p = document.createElement('p');
   result_p.innerHTML += mssg; 
   result_div.appendChild(result_p);
 }
 
-result();
+function clearDisplay () {
+  result_div.innerHTML = "";
+}
+// do {
+//   result();
+// }
+// while();
+
