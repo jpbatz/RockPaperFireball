@@ -1,0 +1,20 @@
+body {
+  background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSyEgzOS15snd_C8V8S6REBw9SI3dizNFqMrRCubqK5TbvgbaIA");
+  text-align: center;
+}
+
+#controls {
+   background: green;
+   text-align: center;
+}
+
+#results {
+  background: yellow;
+  color: purple;
+}
+
+#scoreboard {
+  background: purple;
+  font-weight: bold;
+
+}
