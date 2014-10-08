@@ -6,7 +6,8 @@
 var userChoice,
     compChoice,
     userWins = 0,
-    compWins = 0;
+    compWins = 0,
+    ties = 0;
 
 // noprotect
 function userChooses() {
@@ -51,16 +52,17 @@ function result() {
       if(compPick === "P") {
         display("Computer: Paper");
         display("Paper covers Rock");
-        display("Computer Wins!");
+        display("<strong>Computer Wins!</srong>");
         compWins++;
       } else if(compPick === "F") {
         display("Computer: Fireball");
         display("Rock blocks Fireball");
-        display("User Wins!");
+        display("<strong>User Wins!</strong>");
         userWins++;
       } else if(compPick === "R") {
         display("Computer: Rock");
-        display("Tied! User and Computer both picked Rock.");
+        display("<strong>Tied! User and Computer both picked Rock.</srong>");
+        ties++;
       }
       break;
     case "P":
@@ -68,16 +70,17 @@ function result() {
       if(compPick === "R") {
         display("Computer: Rock");
         display("Paper covers Rock");
-        display("User Wins!");
+        display("<strong>User Wins!</strong>");
         userWins++;
       } else if(compPick === "F") {
         display("Computer: Fireball");
         display("Fireball engulfs Paper");
-        display("Computer Wins!");
+        display("<strong>Computer Wins!</srong>");
         compWins++;
       } if(compPick === "P") {
         display("Computer: Paper");
-        display("Tied! User and Computer both picked Paper.");
+        display("<strong>Tied! User and Computer both picked Paper.</srong>");
+        ties++;
       }
       break;
     case "F":
@@ -85,22 +88,23 @@ function result() {
       if(compPick === "R") {
         display("Computer: Rock");
         display("Rock blocks Fireball");
-        display("Computer Wins!");
+        display("<strong>Computer Wins!</srong>");
         compWins++;
       } else if(compPick === "P") {
         display("Computer: Paper");
         display("Fireball engulfs Paper");
-        display("User Wins!");
+        display("<strong>User Wins!</strong>");
         userWins++;
       } if(compPick === "F") {
         display("Computer: Fireball");
-        display("Tied! User and Computer both picked Fireball.");
+        display("<strong>Tied! User and Computer both picked Fireball.</srong>");
+        ties++;
       }
       break;
     default:
   }
 
-  displayScoreboard("      User Wins = " + userWins + "<br>Computer Wins = " + compWins);
+  displayScoreboard("User Wins = " + userWins + "<br>Computer Wins = " + compWins + "<br>Ties: " + ties);
 
 }
 
