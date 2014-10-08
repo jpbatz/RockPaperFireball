@@ -47,13 +47,14 @@ function result() {
   
   switch(userPick) {
     case "R":
-      display("User: " + userPick);
-      display("Computer: " + compPick);
+      display("User: Rock");
       if(compPick === "P") {
+        display("Computer: Paper");
         display("Paper covers Rock");
         display("Computer Wins!");
         compWins++;
       } else if(compPick === "F") {
+        display("Computer: Fireball");
         display("Rock blocks Fireball");
         display("User Wins!");
         userWins++;
@@ -62,13 +63,14 @@ function result() {
       }
       break;
     case "P":
-      display("User: " + userPick);
-      display("Computer: " + compPick);
+      display("User: Paper");
       if(compPick === "R") {
+        display("Computer: Rock");
         display("Paper covers Rock");
         display("User Wins!");
         userWins++;
       } else if(compPick === "F") {
+        display("Computer: Fireball");
         display("Fireball engulfs Paper");
         display("Computer Wins!");
         compWins++;
@@ -77,13 +79,14 @@ function result() {
       }
       break;
     case "F":
-      display("User: " + userPick);
-      display("Computer: " + compPick);      
+      display("User: Fireball");      
       if(compPick === "R") {
+        display("Computer: Rock");
         display("Rock blocks Fireball");
         display("Computer Wins!");
         compWins++;
       } else if(compPick === "P") {
+        display("Computer: Paper");
         display("Fireball engulfs Paper");
         display("User Wins!");
         userWins++;
@@ -93,15 +96,16 @@ function result() {
       break;
     default:
   }
-  
-  
+
 }
+
+
 var result_div = document.getElementById('results');
-var startButton = document.createElement('button');
-  startButton.innerHTML = "Play";
-  startButton.onclick = result;
+var playButton = document.createElement('button');
+  playButton.innerHTML = "Play";
+  playButton.onclick = result;
   
-  controls.appendChild(startButton);
+  controls.appendChild(playButton);
 
 function display(mssg) {
   var result_p = document.createElement('p');
