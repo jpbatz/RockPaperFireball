@@ -7,7 +7,8 @@ var playerChoice,
     compChoice,
     playerWins = 0,
     compWins = 0,
-    tieCount = 0;
+    tieCount = 0,
+    roundCount = 0;
 
 // noprotect
 function playerChooses() {
@@ -43,9 +44,11 @@ function computerChooses() {
 
 function result() {
   clearDisplay();
+  roundCount++;
+  display("<strong><u>ROUND #" + roundCount + "</u></strong><hr>");
   var playerPick = playerChooses();
   var compPick = computerChooses();
-  
+
   switch(playerPick) {
     case "R":
       display("Player: Rock");
@@ -104,7 +107,7 @@ function result() {
     default:
   }
 
-  displayScoreboard("<strong>SCOREBOARD<strong><HR>");
+  displayScoreboard("<strong><u>SCOREBOARD</u><strong><HR>");
   displayScoreboard("Player Wins = " + playerWins + "<br>Computer Wins = " + compWins + "<br>Ties: " + tieCount);
 
 }

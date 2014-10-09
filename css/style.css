@@ -11,12 +11,11 @@ body {
 #results {
   background: yellow;
   color: purple;
-  padding: 8px;
+  padding: 5px;
 }
 
 #scoreboard {
   background: purple;
   font-weight: bold;
-  padding: 8px;
-
+  padding: 5px;
 }
