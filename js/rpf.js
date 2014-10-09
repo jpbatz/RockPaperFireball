@@ -61,7 +61,7 @@ function result() {
         playerWins++;
       } else if(compPick === "R") {
         display("Computer: Rock");
-        display("<strong><Tie! Player and Computer both picked Rock.</srong>");
+        display("<strong>Tie! Player and Computer both picked Rock.</srong>");
         tieCount++;
       }
       break;
