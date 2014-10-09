@@ -3,28 +3,28 @@
 (function() { // self-invoking anonymous function
   // all code goes here
 
-var userChoice,
+var playerChoice,
     compChoice,
-    userWins = 0,
+    playerWins = 0,
     compWins = 0,
-    ties = 0;
+    tieCount = 0;
 
 // noprotect
-function userChooses() {
+function playerChooses() {
   
   do {
-    userChoice = prompt("Select [R]ock, [P]aper or [F]ireball:","Type 'R', 'P', or 'F'");
-    if ((userChoice.toUpperCase() !== "R") && (userChoice.toUpperCase() !== "P") && (userChoice.toUpperCase() !== "F")) {
+    playerChoice = prompt("Select [R]ock, [P]aper or [F]ireball:","Type 'R', 'P', or 'F'");
+    if ((playerChoice.toUpperCase() !== "R") && (playerChoice.toUpperCase() !== "P") && (playerChoice.toUpperCase() !== "F")) {
       alert("Try using R, P, or F. No messing around!");
     }
-  } while ((userChoice.toUpperCase() !== "R") && (userChoice.toUpperCase() !== "P") && (userChoice.toUpperCase() !== "F"));
+  } while ((playerChoice.toUpperCase() !== "R") && (playerChoice.toUpperCase() !== "P") && (playerChoice.toUpperCase() !== "F"));
   
-  return userChoice.toUpperCase();
+  return playerChoice.toUpperCase();
 }
 
 function computerChooses() {
-  var wag = Math.floor(Math.random()*3);
-  switch(wag) {
+  var randomGen = Math.floor(Math.random()*3);
+  switch(randomGen) {
     case 0:
       compChoice = "R";
       break;
@@ -43,69 +43,69 @@ function computerChooses() {
 
 function result() {
   clearDisplay();
-  var userPick = userChooses();
+  var playerPick = playerChooses();
   var compPick = computerChooses();
   
-  switch(userPick) {
+  switch(playerPick) {
     case "R":
-      display("User: Rock");
+      display("Player: Rock");
       if(compPick === "P") {
         display("Computer: Paper");
-        display("Paper covers Rock");
+        display("<i>Paper covers Rock</i>");
         display("<strong>Computer Wins!</srong>");
         compWins++;
       } else if(compPick === "F") {
         display("Computer: Fireball");
-        display("Rock blocks Fireball");
-        display("<strong>User Wins!</strong>");
-        userWins++;
+        display("<i>Rock blocks Fireball</i>");
+        display("<strong>Player Wins!</strong>");
+        playerWins++;
       } else if(compPick === "R") {
         display("Computer: Rock");
-        display("<strong>Tied! User and Computer both picked Rock.</srong>");
-        ties++;
+        display("<strong><Tie! Player and Computer both picked Rock.</srong>");
+        tieCount++;
       }
       break;
     case "P":
-      display("User: Paper");
+      display("Player: Paper");
       if(compPick === "R") {
         display("Computer: Rock");
-        display("Paper covers Rock");
-        display("<strong>User Wins!</strong>");
-        userWins++;
+        display("<i>Paper covers Rock</i>");
+        display("<strong><i>Player Wins!</i></strong>");
+        playerWins++;
       } else if(compPick === "F") {
         display("Computer: Fireball");
-        display("Fireball engulfs Paper");
+        display("<i>Fireball engulfs Paper</i>");
         display("<strong>Computer Wins!</srong>");
         compWins++;
       } if(compPick === "P") {
         display("Computer: Paper");
-        display("<strong>Tied! User and Computer both picked Paper.</srong>");
-        ties++;
+        display("<strong>Tie! Player and Computer both picked Paper.</srong>");
+        tieCount++;
       }
       break;
     case "F":
-      display("User: Fireball");      
+      display("Player: Fireball");      
       if(compPick === "R") {
         display("Computer: Rock");
-        display("Rock blocks Fireball");
+        display("<i>Rock blocks Fireball</i>");
         display("<strong>Computer Wins!</srong>");
         compWins++;
       } else if(compPick === "P") {
         display("Computer: Paper");
-        display("Fireball engulfs Paper");
-        display("<strong>User Wins!</strong>");
-        userWins++;
+        display("<i>Fireball engulfs Paper</i>");
+        display("<strong>Player Wins!</strong>");
+        playerWins++;
       } if(compPick === "F") {
         display("Computer: Fireball");
-        display("<strong>Tied! User and Computer both picked Fireball.</srong>");
-        ties++;
+        display("<strong>Tie! Player and Computer both picked Fireball.</srong>");
+        tieCount++;
       }
       break;
     default:
   }
 
   displayScoreboard("<strong>SCOREBOARD<strong><HR>");
-  displayScoreboard("User Wins = " + userWins + "<br>Computer Wins = " + compWins + "<br>Ties: " + ties);
+  displayScoreboard("Player Wins = " + playerWins + "<br>Computer Wins = " + compWins + "<br>Ties: " + tieCount);
 
 }
 
