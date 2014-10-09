@@ -104,6 +104,7 @@ function result() {
     default:
   }
 
+  displayScoreboard("<strong>SCOREBOARD<strong><HR>");
   displayScoreboard("User Wins = " + userWins + "<br>Computer Wins = " + compWins + "<br>Ties: " + ties);
 
 }
